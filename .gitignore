@@ -1,0 +1,59 @@
+# Laravel specific
+*.log
+.env
+.env.backup
+.env.production
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+/auth.json
+/storage/*.key
+/storage/pail
+/vendor
+/node_modules
+/public/build
+/public/hot
+/public/storage
+
+# Composer
+composer.phar
+composer.lock   # (यदि तपाईं lock file commit गर्न चाहनुहुन्न भने, तर सामान्यतया composer.lock commit गर्नुपर्छ। तपाईंको आवश्यकता अनुसार राख्नुहोस्।)
+
+# NPM / Yarn
+npm-debug.log
+yarn-error.log
+package-lock.json   # यदि commit गर्न चाहनुहुन्न भने, तर lock file commit गर्नु राम्रो हुन्छ।
+
+# IDEs and editors
+.DS_Store
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+Thumbs.db
+
+# OS generated files
+Desktop.ini
+$RECYCLE.BIN/
+*.swp
+*.swo
+*~
+
+# Laravel specific cache
+/.phpactor.json
+/.php-cs-fixer.cache
+
+# Laravel Telescope (if used)
+/telescope
+
+# Laravel Pulse (if used)
+/pulse
+
+# Laravel Octane (if used)
+/octane
+
+# SQLite databases (if used locally)
+*.sqlite
+*.sqlite-journal
