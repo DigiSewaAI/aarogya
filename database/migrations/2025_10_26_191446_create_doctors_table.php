@@ -6,27 +6,30 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-    // database/migrations/2024_01_01_create_doctors_table.php
-public function up()
-{
-    Schema::create('doctors', function (Blueprint $table) {
-        $table->id();
-        $table->string('name');
-        $table->string('specialization');
-        $table->string('phone');
-        $table->text('address');
-        $table->decimal('fee', 8, 2);
-        $table->timestamps();
-    });
-}
+    public function up()
+    {
+        Schema::create('doctors', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->string('qualification')->nullable();
+            $table->string('specialization')->nullable();  // <-- nullable
+            $table->string('phone')->nullable();           // <-- nullable
+            $table->string('nmc_registration')->unique()->nullable();
+            $table->integer('experience')->nullable();
+            $table->decimal('consultation_fee', 10, 2)->default(0);
+            $table->string('profile_photo')->nullable();
+            $table->text('bio')->nullable();
+            $table->string('clinic_name')->nullable();
+            $table->text('clinic_address')->nullable();
+            $table->enum('verification_status', ['pending', 'approved', 'rejected'])->default('pending');
+            $table->boolean('is_active')->default(true);
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
 
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('doctors');
     }
