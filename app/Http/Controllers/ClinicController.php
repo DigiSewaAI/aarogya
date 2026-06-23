@@ -27,8 +27,8 @@ class ClinicController extends Controller
 
         // ========== NEW: Check facility type and show info ==========
         if ($clinic->facility_type !== 'clinic') {
-            session()->flash('info', __('messages.facility_type_not_active', ['type' => $clinic->facility_type_label]));
-        }
+    session()->flash('info', __('messages.facility_onboarding_message', ['type' => $clinic->facility_type_label]));
+}
         // =============================================================
 
         // Get doctors under this clinic

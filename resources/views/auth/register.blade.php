@@ -38,10 +38,10 @@
                     @csrf
 
                     <div class="space-y-5">
-                        <!-- Name -->
+                        <!-- Name - Dynamic Label -->
                         <div>
-                            <label class="block text-slate-700 font-medium mb-1">{{ __('messages.auth_name') }}</label>
-                            <input type="text" name="name" value="{{ old('name') }}" required
+                            <label id="name_label" class="block text-slate-700 font-medium mb-1">{{ __('messages.auth_name') }}</label>
+                            <input type="text" name="name" id="name" value="{{ old('name') }}" required
                                    class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
 
@@ -80,28 +80,28 @@
                                    class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
 
-                        <!-- Role Selection -->
+                        <!-- ========== ROLE SELECTION (UPDATED) ========== -->
                         <div>
                             <label class="block text-slate-700 font-medium mb-1">{{ __('messages.role') ?? 'Register as' }}</label>
-                            <select name="role" required class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            <select name="role" id="role" required class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                                 <option value="patient">{{ __('messages.patient') ?? 'Patient' }}</option>
                                 <option value="doctor" {{ old('role') == 'doctor' ? 'selected' : '' }}>{{ __('messages.doctor') ?? 'Doctor' }}</option>
-                                <option value="clinic" {{ old('role') == 'clinic' ? 'selected' : '' }}>{{ __('messages.clinic') ?? 'Clinic' }}</option>
+                                <option value="clinic" {{ old('role') == 'clinic' ? 'selected' : '' }}>{{ __('messages.healthcare_facility') ?? 'Healthcare Facility' }}</option>
                             </select>
                         </div>
 
-                        <!-- ========== NEW: Facility Type (only for clinic role) ========== -->
+                        <!-- ========== FACILITY TYPE (Only for Healthcare Facility) ========== -->
                         <div id="facility_type_wrapper" style="display: none;">
                             <label class="block text-slate-700 font-medium mb-1">{{ __('messages.facility_type') }}</label>
-                            <select name="facility_type" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                            <select name="facility_type" id="facility_type" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                                 <option value="clinic">{{ __('messages.clinic') }}</option>
                                 <option value="hospital">{{ __('messages.hospital') }} ({{ __('messages.coming_soon') }})</option>
                                 <option value="diagnostic">{{ __('messages.diagnostic_center') }} ({{ __('messages.coming_soon') }})</option>
                                 <option value="other">{{ __('messages.other') }}</option>
                             </select>
-                            <p class="text-xs text-slate-400 mt-1">{{ __('messages.facility_type_help') }}</p>
+                            <p class="text-xs text-slate-400 mt-1">{{ __('messages.facility_type_help_v2') }}</p>
                         </div>
-                        <!-- ============================================================= -->
+                        <!-- ============================================= -->
 
                         <!-- Submit Button -->
                         <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 rounded-xl transition shadow-md">
@@ -121,25 +121,39 @@
 
     @include('partials.footer')
 
-    <!-- ========== NEW: JavaScript Toggle for Facility Type ========== -->
+    <!-- ========== JAVASCRIPT ========== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const roleSelect = document.querySelector('select[name="role"]');
+            const roleSelect = document.getElementById('role');
             const facilityWrapper = document.getElementById('facility_type_wrapper');
+            const nameLabel = document.getElementById('name_label');
+            const nameInput = document.getElementById('name');
 
-            function toggleFacility() {
-                if (roleSelect.value === 'clinic') {
+            function toggleFacilityAndName() {
+                const role = roleSelect.value;
+                
+                // Toggle facility type
+                if (role === 'clinic') {
                     facilityWrapper.style.display = 'block';
                 } else {
                     facilityWrapper.style.display = 'none';
                 }
+
+                // Dynamic name label
+                if (role === 'clinic') {
+                    nameLabel.textContent = '{{ __('messages.facility_name') }}';
+                    nameInput.placeholder = '{{ __('messages.facility_name_placeholder') }}';
+                } else {
+                    nameLabel.textContent = '{{ __('messages.auth_name') }}';
+                    nameInput.placeholder = '{{ __('messages.auth_name_placeholder') }}';
+                }
             }
 
-            roleSelect.addEventListener('change', toggleFacility);
-            toggleFacility(); // call on page load to set initial state
+            roleSelect.addEventListener('change', toggleFacilityAndName);
+            toggleFacilityAndName(); // Initial state
         });
     </script>
-    <!-- ============================================================= -->
+    <!-- ===================================== -->
 
 </body>
 </html>

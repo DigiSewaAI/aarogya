@@ -8,7 +8,7 @@ return [
     'symptom_checker' => 'Symptom Checker',
     'doctors' => 'Doctors',
     'services' => 'Services',
-    'clinics' => 'Healthcare Facilities', // ← अपडेट
+    'clinics' => 'Healthcare Facilities',
     'dashboard' => 'Dashboard',
     'login' => 'Login',
     'register' => 'Register',
@@ -34,7 +34,7 @@ return [
     'hero_heading' => 'Your <span class="text-cyan-600">AI-Powered</span><br>Health Assistant',
     'hero_description' => 'Check symptoms, consult with doctors, and securely store your complete health records. AAROGYA is available 24/7.',
     'verified_doctors' => 'Verified Doctors',
-    'verified_clinics' => 'Verified Healthcare Facilities', // ← अपडेट
+    'verified_clinics' => 'Verified Healthcare Facilities',
     'secure_records' => 'Secure Records',
     'ai_support' => 'AI-Powered Support',
     'check_symptoms' => 'Check Symptoms',
@@ -54,10 +54,10 @@ return [
     // =============================================
     'stats_analysis' => 'Symptoms Analyzed',
     'stats_doctors' => 'Verified Doctors',
-    'stats_clinics' => 'Partner Clinics', // यो पनि अपडेट गर्न सकिन्छ तर हामीले 'partner_clinics' तल अपडेट गरेका छौं, यो 'stats_clinics' अलग छ, यसलाई पनि 'Partner Facilities' गर्नु उपयुक्त हुन्छ, तर निर्देशनमा उल्लेख छैन, तर म यसलाई पनि 'Partner Facilities' मा बदल्छु।
+    'stats_clinics' => 'Partner Facilities',
     'stats_support' => 'AI Support',
     'trusted_doctors_network' => 'Trusted Doctors Network',
-    'trusted_clinics_network' => 'Verified Clinics Network', // यो पनि अपडेट गर्न सकिन्छ तर निर्देशनमा छैन, म 'Verified Facilities Network' गर्छु।
+    'trusted_clinics_network' => 'Verified Facilities Network',
 
     // =============================================
     // HERO IMAGE
@@ -75,10 +75,10 @@ return [
     // =============================================
     // HOME PAGE – FEATURED CLINICS
     // =============================================
-    'partner_clinics' => 'Partner Healthcare Facilities', // ← अपडेट
-    'partner_clinics_sub' => 'Verified healthcare facilities across Nepal', // ← अपडेट
-    'view_clinic' => 'View Clinic', // यसलाई 'View Facility' पनि गर्न सकिन्छ, तर निर्देशनमा छैन, म 'View Facility' गर्छु।
-    'view_all_clinics' => 'View All Facilities', // ← अपडेट
+    'partner_clinics' => 'Partner Healthcare Facilities',
+    'partner_clinics_sub' => 'Verified healthcare facilities across Nepal',
+    'view_clinic' => 'View Facility',
+    'view_all_clinics' => 'View All Facilities',
     'doctors_count' => ':count doctors',
 
     // =============================================
@@ -90,15 +90,14 @@ return [
     'service_ai_desc' => 'Describe your symptoms and get preliminary suggestions from AI.',
     'service_doctor_title' => 'Verified Doctors',
     'service_doctor_desc' => 'Direct consultation with experienced doctors from Nepal.',
-    'service_clinic_title' => 'Verified Clinics', // यो पनि 'Verified Facilities' गर्न सकिन्छ
-    'service_clinic_desc' => 'Find and book appointments at verified clinics near you.', // यो पनि 'facilities'
+    'service_clinic_title' => 'Verified Facilities',
+    'service_clinic_desc' => 'Find and book appointments at verified facilities near you.',
     'service_booking_title' => 'Appointment Booking',
-    'service_booking_desc_short' => 'Book appointments with doctors and clinics easily.',
+    'service_booking_desc_short' => 'Book appointments with doctors and facilities easily.',
     'service_dashboard_title' => 'Health Dashboard',
     'service_dashboard_desc' => 'Manage reports, history, and medications in one place.',
     'service_records_title' => 'Medical Records',
     'service_records_desc' => 'Securely store and access your medical records anytime.',
-    // Additional service keys from your original file
     'service_tracking_title' => 'Medication Tracking',
     'service_tracking_desc' => 'Easily track medication timing and health records.',
 
@@ -110,9 +109,9 @@ return [
     'step1_desc' => 'Describe your health issue.',
     'step2_title' => 'AI Analysis',
     'step2_desc' => 'AI gives possible causes and suggestions.',
-    'step3_title' => 'Choose Doctor or Clinic',
-    'step3_desc_choose' => 'Select a verified doctor or clinic.',
-    'step3_desc' => 'Take expert doctor consultation.', // from your file
+    'step3_title' => 'Choose Doctor or Facility',
+    'step3_desc_choose' => 'Select a verified doctor or facility.',
+    'step3_desc' => 'Take expert doctor consultation.',
     'step4_title' => 'Book Appointment',
     'step4_desc' => 'Choose date and time that works for you.',
     'step5_title' => 'Receive Consultation',
@@ -125,8 +124,8 @@ return [
     'trust_subtitle' => 'We are committed to providing secure, reliable, and accessible healthcare.',
     'trust_verified_doctors' => 'Verified Doctors',
     'trust_verified_doctors_desc' => 'All doctors are verified by the government of Nepal.',
-    'trust_verified_clinics' => 'Verified Healthcare Facilities', // ← अपडेट
-    'trust_verified_clinics_desc' => 'All clinics are verified and registered.', // यो पनि 'facilities'
+    'trust_verified_clinics' => 'Verified Healthcare Facilities',
+    'trust_verified_clinics_desc' => 'All facilities are verified and registered.',
     'trust_secure_records' => 'Secure Health Records',
     'trust_secure_records_desc' => 'Your health data is encrypted and secure.',
     'trust_privacy' => 'Privacy Protection',
@@ -150,17 +149,16 @@ return [
     // =============================================
     // HOME PAGE – ONBOARDING CTA
     // =============================================
-    'onboarding_title' => 'Are You a Doctor or Clinic?',
+    'onboarding_title' => 'Are You a Doctor or Facility?',
     'onboarding_subtitle' => 'Join AAROGYA and start receiving appointment requests online.',
     'register_as_doctor' => 'Register as Doctor',
-    'register_as_clinic' => 'Register as a Healthcare Facility', // ← अपडेट
+    'register_as_clinic' => 'Register as a Healthcare Facility',
 
     // =============================================
     // HOME PAGE – FINAL CTA
     // =============================================
     'final_cta_heading' => 'Take Control of Your Health Today',
     'final_cta_desc' => 'Join thousands of satisfied users and start your healthcare journey.',
-    // Additional CTA from your file
     'cta_heading' => 'Your Health is Our Priority',
     'cta_desc' => 'Create your free account today and experience healthcare like never before.',
     'cta_button' => 'Start Free',
@@ -179,7 +177,7 @@ return [
     'all_rights_reserved' => 'All Rights Reserved.',
 
     // Home page additions
-    'search_doctor_clinic_specialty' => 'Search doctor, healthcare facility or specialization...', // ← अपडेट
+    'search_doctor_clinic_specialty' => 'Search doctor, healthcare facility or specialization...',
     'popular_specialties' => 'Popular Specialties',
     'why_choose_arogya' => 'Why Choose AAROGYA?',
     'why_choose_arogya_sub' => 'We are committed to making healthcare accessible, trusted, and seamless.',
@@ -282,13 +280,13 @@ return [
     'share_qr_description' => 'Share your QR code with patients',
     'qr_info_title' => 'About QR Code',
     'qr_info_1' => 'Patients can scan to view your profile',
-    'qr_info_2' => 'Download and print for your clinic',
+    'qr_info_2' => 'Download and print for your facility',
     'qr_info_3' => 'Share via social media or email',
 
     // =============================================
     // SYMPTOM CHECKER
     // =============================================
-    'check_symptoms' => 'Check Symptoms', // duplicate but kept for consistency
+    'check_symptoms' => 'Check Symptoms',
     'symptom_title' => 'Symptom Checker',
     'symptom_badge' => '🤖 AI-Powered | Quick Analysis',
     'symptom_heading' => '🔍 Symptom Checker',
@@ -354,7 +352,7 @@ return [
     'doctor_reviews_count' => ':count reviews',
     'doctors_features_heading' => 'Our Specialties',
     'verified' => 'Verified',
-    
+
     // =============================================
     // DOCTOR PROFILE PAGE (Public)
     // =============================================
@@ -369,6 +367,7 @@ return [
     'online_consultation_available' => 'Online Consultation Available',
     'book_in_advance' => 'Book in Advance',
     'go_to_appointments' => 'Go to Appointments',
+
     // =============================================
     // DASHBOARD (Patient)
     // =============================================
@@ -400,6 +399,7 @@ return [
     'role' => 'I want to register as',
     'patient' => 'Patient',
     'doctor' => 'Doctor',
+    'healthcare_facility' => 'Healthcare Facility',
     'clinic' => 'Clinic', // role name, not changed
     'admin' => 'Admin',
     'user' => 'User',
@@ -412,35 +412,35 @@ return [
     // SIDEBAR / DASHBOARD TITLES (Module 2)
     // =============================================
     'doctor_dashboard' => 'Doctor Dashboard',
-    'clinic_dashboard' => 'Facility Dashboard', // ← अपडेट
+    'clinic_dashboard' => 'Facility Dashboard',
     'admin_dashboard' => 'Admin Dashboard',
-    'clinics' => 'Healthcare Facilities', // पहिल्यै अपडेट गरिएको (नेभिगेसन)
+    'clinics' => 'Healthcare Facilities',
     'users' => 'Users',
     'verifications' => 'Verifications',
 
     // =============================================
     // CLINIC RELATED (Module 3+)
     // =============================================
-    'complete_clinic_profile_first' => 'Please complete your clinic profile first.',
-    'clinic_profile_updated' => 'Clinic profile updated successfully.',
-    'doctor_already_assigned' => 'This doctor is already assigned to another clinic.',
-    'doctor_added_to_clinic' => 'Doctor added to clinic successfully.',
-    'doctor_removed_from_clinic' => 'Doctor removed from clinic.',
+    'complete_clinic_profile_first' => 'Please complete your facility profile first.',
+    'clinic_profile_updated' => 'Facility profile updated successfully.',
+    'doctor_already_assigned' => 'This doctor is already assigned to another facility.',
+    'doctor_added_to_clinic' => 'Doctor added to facility successfully.',
+    'doctor_removed_from_clinic' => 'Doctor removed from facility.',
     'add_doctor' => 'Add Doctor',
     'add' => 'Add',
     'remove' => 'Remove',
-    'confirm_remove_doctor' => 'Are you sure you want to remove this doctor from your clinic?',
-    'no_doctors_assigned' => 'No doctors assigned to your clinic yet.',
+    'confirm_remove_doctor' => 'Are you sure you want to remove this doctor from your facility?',
+    'no_doctors_assigned' => 'No doctors assigned to your facility yet.',
     'edit_profile' => 'Edit Profile',
     'experience_years' => 'years',
     'verification_status' => 'Verification Status',
     'description' => 'Description',
     'logo' => 'Logo',
-    'clinic_profile' => 'Clinic Profile', // यो 'Facility Profile' पनि गर्न सकिन्छ, तर निर्देशनमा छैन, म 'Facility Profile' गर्छु।
-    'no_clinic_profile' => 'No clinic profile found. Please complete your profile.',
-    'doctors_at_clinic' => 'Doctors at this clinic',
-    'no_doctors_assigned' => 'No doctors assigned to this clinic yet.',
-    'clinic_verified' => 'Verified Clinic', // 'Verified Facility'
+    'clinic_profile' => 'Facility Profile',
+    'no_clinic_profile' => 'No facility profile found. Please complete your profile.',
+    'doctors_at_clinic' => 'Doctors at this facility',
+    'no_doctors_assigned' => 'No doctors assigned to this facility yet.',
+    'clinic_verified' => 'Verified Facility',
     'clinic_not_verified' => 'Not Verified',
     'clinic_location' => 'Location',
     'clinic_contact' => 'Contact',
@@ -451,8 +451,8 @@ return [
     // =============================================
     'doctor_verified_success' => 'Doctor verified successfully.',
     'doctor_rejected' => 'Doctor rejected.',
-    'clinic_verified_success' => 'Clinic verified successfully.',
-    'clinic_rejected' => 'Clinic rejected.',
+    'clinic_verified_success' => 'Facility verified successfully.',
+    'clinic_rejected' => 'Facility rejected.',
     'cannot_delete_admin' => 'Cannot delete admin account.',
     'user_deleted' => 'User deleted successfully.',
     'user_activated' => 'User activated.',
@@ -479,8 +479,8 @@ return [
     'nmc_registration' => 'NMC Registration',
     'experience' => 'Experience (years)',
     'consultation_fee' => 'Consultation Fee (Rs.)',
-    'clinic_name' => 'Clinic Name',
-    'clinic_address' => 'Clinic Address',
+    'clinic_name' => 'Facility Name',
+    'clinic_address' => 'Facility Address',
     'bio' => 'Bio / About',
     'profile_photo' => 'Profile Photo',
 
@@ -509,7 +509,7 @@ return [
     'reset' => 'Reset',
     'guest' => 'Guest',
     'no_appointments_sub' => 'No appointments found. When patients book appointments, they will appear here.',
-    'doctor_already_in_clinic' => 'This doctor is already assigned to another clinic.',
+    'doctor_already_in_clinic' => 'This doctor is already assigned to another facility.',
     'view_qr' => 'View QR Code',
     'appointment_qr' => 'Appointment QR Code',
     'scan_to_view_appointment' => 'Scan to view appointment details',
@@ -522,9 +522,9 @@ return [
     // ADMIN PANEL (Module 7)
     // =============================================
     'pending_doctors' => 'Pending Doctors',
-    'pending_clinics' => 'Pending Clinics',
+    'pending_clinics' => 'Pending Facilities',
     'no_pending_doctors' => 'No pending doctors to verify.',
-    'no_pending_clinics' => 'No pending clinics to verify.',
+    'no_pending_clinics' => 'No pending facilities to verify.',
     'all_roles' => 'All Roles',
     'activate' => 'Activate',
     'deactivate' => 'Deactivate',
@@ -538,7 +538,7 @@ return [
     'confirm_delete_user' => 'Are you sure you want to delete this user?',
     'no_users_found' => 'No users found.',
     'no_doctors_found' => 'No doctors found.',
-    'no_clinics_found' => 'No clinics found.',
+    'no_clinics_found' => 'No facilities found.',
     'status' => 'Status',
 
     // =============================================
@@ -555,7 +555,7 @@ return [
     'privacy_collect_title' => 'Information We Collect',
     'privacy_collect_patients' => 'Patients: Name, Email, Phone, Profile Information',
     'privacy_collect_doctors' => 'Doctors: Professional Information, Registration Details',
-    'privacy_collect_clinics' => 'Clinics: Clinic Information',
+    'privacy_collect_clinics' => 'Facilities: Facility Information',
     'privacy_collect_system' => 'System Data: Login Information, Device Information, Usage Data',
     'privacy_use_title' => 'How We Use Information',
     'privacy_use_1' => 'Appointment Management',
@@ -585,8 +585,8 @@ return [
     'terms_doctor_1' => 'Maintain valid credentials',
     'terms_doctor_2' => 'Provide accurate profile information',
     'terms_doctor_3' => 'Follow applicable healthcare regulations',
-    'terms_clinic_title' => 'Clinic Responsibilities',
-    'terms_clinic_1' => 'Provide accurate clinic information',
+    'terms_clinic_title' => 'Facility Responsibilities',
+    'terms_clinic_1' => 'Provide accurate facility information',
     'terms_clinic_2' => 'Manage doctors responsibly',
     'terms_ai_title' => 'AI Disclaimer',
     'terms_ai_desc' => 'AAROGYA AI does NOT provide medical diagnosis. AI suggestions are informational only.',
@@ -622,7 +622,6 @@ return [
     'contact_submitted' => 'Your message has been submitted successfully.',
     'contact_message_read' => 'Message marked as read.',
     'reports' => 'Reports',
-    'contacts' => 'Contact Messages',
     'notifications' => 'Notifications',
     'search_patient' => 'Search patient...',
     'select_patient' => 'Select patient',
@@ -635,17 +634,16 @@ return [
     'expired' => 'Expired',
     'create_prescription_subtitle' => 'Create a new prescription for your patient',
     'medicines' => 'Medicines',
-    'search_patient' => 'Search patient...',
 
     // About Page
     'about_mission_title' => 'Our Mission',
     'about_mission_desc' => 'Make healthcare accessible through technology.',
     'about_vision_title' => 'Our Vision',
-    'about_vision_desc' => 'Connect patients, doctors, and clinics through one trusted platform.',
+    'about_vision_desc' => 'Connect patients, doctors, and facilities through one trusted platform.',
     'about_why_title' => 'Why AAROGYA?',
     'about_why_1' => 'AI Symptom Checker',
     'about_why_2' => 'Verified Doctors',
-    'about_why_3' => 'Verified Clinics',
+    'about_why_3' => 'Verified Facilities',
     'about_why_4' => 'Appointment Booking',
     'about_why_5' => 'Secure Health Records',
 
@@ -708,7 +706,7 @@ return [
     'appointment_rejected_email_subject' => 'Appointment Rejected',
     'appointment_completed_email_subject' => 'Appointment Completed',
     'doctor_approved_email_subject' => 'Your Doctor Account has been Approved!',
-    'clinic_approved_email_subject' => 'Your Clinic Account has been Approved!',
+    'clinic_approved_email_subject' => 'Your Facility Account has been Approved!',
 
     // Notification Messages
     'notification_appointment_booked' => 'Your appointment with :doctor on :date at :time has been booked successfully.',
@@ -719,8 +717,8 @@ return [
     'notification_appointment_cancelled' => 'Your appointment with :doctor on :date has been cancelled.',
     'notification_doctor_verified' => 'Your doctor account ":name" has been verified successfully.',
     'notification_doctor_rejected' => 'Your doctor account ":name" has been rejected. Please contact support.',
-    'notification_clinic_verified' => 'Your clinic ":name" has been verified successfully.',
-    'notification_clinic_rejected' => 'Your clinic ":name" has been rejected. Please contact support.',
+    'notification_clinic_verified' => 'Your facility ":name" has been verified successfully.',
+    'notification_clinic_rejected' => 'Your facility ":name" has been rejected. Please contact support.',
     'notification_account_status_changed' => 'Your account has been :status.',
 
     // Appointment Actions
@@ -784,11 +782,6 @@ return [
     'no_notifications' => 'No notifications',
     'notifications' => 'Notifications',
     'mark_as_read' => 'Mark as read',
-    'notification_appointment_request' => 'You have a new appointment request from :patient on :date at :time.',
-    'notification_appointment_approved' => 'Your appointment with :doctor on :date at :time has been approved.',
-    'notification_appointment_rejected' => 'Your appointment with :doctor on :date has been rejected.',
-    'notification_appointment_completed' => 'Your appointment with :doctor on :date has been completed.',
-    'notification_appointment_cancelled' => 'Your appointment with :doctor on :date has been cancelled.',
 
     // Follow-ups
     'follow_up_date' => 'Follow-Up Date',
@@ -813,15 +806,18 @@ return [
     'no_prescriptions' => 'No prescriptions available.',
 
     // =============================================
-// FACILITY TYPE
-// =============================================
-'facility' => 'Facility',
-'all_types' => 'All Types',
-'facility_type' => 'Facility Type',
-'facility_type_help' => 'Only "Clinic" type gets full access now. Other types are for future expansion.',
-'hospital' => 'Hospital',
-'diagnostic_center' => 'Diagnostic Center',
-'other' => 'Other',
-'coming_soon' => 'Coming Soon',
-'facility_type_not_active' => 'Your facility type ":type" is not yet fully supported. Some features may be limited.',
+    // ✅ NEW: FACILITY TYPE KEYS (Added only once)
+    // =============================================
+    'facility' => 'Facility',
+    'all_types' => 'All Types',
+    'facility_type' => 'Facility Type',
+    'facility_type_help_v2' => 'Clinic facilities receive full access currently. Hospital and Diagnostic onboarding will open soon.',
+    'facility_onboarding_message' => 'Registration received. :type onboarding is currently in early access. We will notify you when it\'s ready.',
+    'hospital' => 'Hospital',
+    'diagnostic_center' => 'Diagnostic Center',
+    'other' => 'Other',
+    'coming_soon' => 'Coming Soon',
+    'facility_name' => 'Facility Name',
+    'facility_name_placeholder' => 'Enter your facility name',
+    'auth_name_placeholder' => 'Enter your full name',
 ];

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Models\Clinic; // ← नयाँ थपियो
+use App\Models\Clinic;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -13,20 +13,13 @@ use Illuminate\Validation\Rules\Password;
 
 class RegisterController extends Controller
 {
-    /**
-     * Show the registration form.
-     */
     public function showRegistrationForm()
     {
         return view('auth.register');
     }
 
-    /**
-     * Handle a registration request.
-     */
     public function register(Request $request)
     {
-        // Validate incoming request
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
@@ -34,10 +27,10 @@ class RegisterController extends Controller
             'role' => 'required|in:patient,doctor,clinic',
             'phone' => 'nullable|string|max:20',
             'address' => 'nullable|string|max:500',
-            'facility_type' => 'nullable|in:clinic,hospital,diagnostic,other', // ← नयाँ
+            'facility_type' => 'nullable|in:clinic,hospital,diagnostic,other',
         ]);
 
-        // Create the user
+        // Create user
         $user = User::create([
             'name' => $validated['name'],
             'email' => $validated['email'],
@@ -47,33 +40,43 @@ class RegisterController extends Controller
             'address' => $validated['address'] ?? null,
         ]);
 
-        // Fire registered event (for email verification if enabled)
         event(new Registered($user));
 
-        // ========== NEW: Create clinic record if role is clinic ==========
+        // ========== HANDLE HEALTHCARE FACILITY ==========
         if ($user->role === 'clinic') {
-            Clinic::create([
+            $facilityType = $request->input('facility_type', 'clinic');
+
+            // Create clinic record
+            $clinic = Clinic::create([
                 'user_id' => $user->id,
-                'clinic_name' => $validated['name'], // using user's name as clinic name
-                'facility_type' => $request->input('facility_type', 'clinic'), // default 'clinic'
+                'clinic_name' => $validated['name'],
+                'facility_type' => $facilityType,
                 'verification_status' => 'pending',
                 'is_active' => true,
                 'phone' => $validated['phone'] ?? null,
                 'address' => $validated['address'] ?? null,
             ]);
+
+            // ========== HOSPITAL / DIAGNOSTIC = DO NOT LOGIN ==========
+            if ($facilityType !== 'clinic') {
+                // Logout the user (they are not logged in yet, but just in case)
+                Auth::logout();
+                // Show message and redirect to login
+                return redirect()->route('login')
+                    ->with('info', __('messages.facility_onboarding_message', ['type' => ucfirst($facilityType)]));
+            }
+
+            // ========== CLINIC / OTHER = LOGIN ==========
+            Auth::login($user);
+            return redirect()->route('clinic.dashboard')
+                ->with('success', __('messages.registration_success'));
         }
-        // ================================================================
 
-        // Log the user in
+        // ========== PATIENT / DOCTOR = LOGIN ==========
         Auth::login($user);
-
-        // Redirect based on role
         return $this->redirectBasedOnRole($user);
     }
 
-    /**
-     * Redirect user based on their role.
-     */
     protected function redirectBasedOnRole(User $user)
     {
         return match ($user->role) {
@@ -82,8 +85,8 @@ class RegisterController extends Controller
                 ->with('success', __('messages.profile_required')),
 
             'clinic' => redirect()
-                ->route('clinic.profile.edit')
-                ->with('success', __('messages.profile_required')),
+                ->route('clinic.dashboard')
+                ->with('success', __('messages.registration_success')),
 
             default => redirect()
                 ->route('patient.dashboard')
