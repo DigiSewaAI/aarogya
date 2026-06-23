@@ -96,15 +96,15 @@
             }
         }
         /* ✅ Hero Headline & Subtitle Height Fix */
-html[lang="en"] .hero-headline,
-html[lang="ne"] .hero-headline {
-    line-height: 1.2 !important;
-}
+        html[lang="en"] .hero-headline,
+        html[lang="ne"] .hero-headline {
+            line-height: 1.2 !important;
+        }
 
-html[lang="en"] .hero-subheadline,
-html[lang="ne"] .hero-subheadline {
-    line-height: 1.5 !important;
-}
+        html[lang="en"] .hero-subheadline,
+        html[lang="ne"] .hero-subheadline {
+            line-height: 1.5 !important;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -121,11 +121,11 @@ html[lang="ne"] .hero-subheadline {
                         🏥 {{ __('messages.hero_badge') }}
                     </div>
                     <h1 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900 hero-headline">
-    {{ __('messages.hero_headline') }}
-</h1>
-<p class="mt-2 text-lg text-slate-600 leading-relaxed hero-subheadline">
-    {{ __('messages.hero_subheadline') }}
-</p>
+                        {{ __('messages.hero_headline') }}
+                    </h1>
+                    <p class="mt-2 text-lg text-slate-600 leading-relaxed hero-subheadline">
+                        {{ __('messages.hero_subheadline') }}
+                    </p>
                     <div class="mt-5 flex flex-wrap gap-4">
                         <a href="{{ route('doctors') }}" class="bg-cyan-600 text-white px-8 py-4 rounded-2xl shadow-lg hover:bg-cyan-700 transition text-center">
                             📅 {{ __('messages.book_appointment') }}

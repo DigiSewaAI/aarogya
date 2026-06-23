@@ -80,7 +80,7 @@
                                    class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
                         </div>
 
-                        <!-- Role Selection (CRITICAL) -->
+                        <!-- Role Selection -->
                         <div>
                             <label class="block text-slate-700 font-medium mb-1">{{ __('messages.role') ?? 'Register as' }}</label>
                             <select name="role" required class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
@@ -89,6 +89,19 @@
                                 <option value="clinic" {{ old('role') == 'clinic' ? 'selected' : '' }}>{{ __('messages.clinic') ?? 'Clinic' }}</option>
                             </select>
                         </div>
+
+                        <!-- ========== NEW: Facility Type (only for clinic role) ========== -->
+                        <div id="facility_type_wrapper" style="display: none;">
+                            <label class="block text-slate-700 font-medium mb-1">{{ __('messages.facility_type') }}</label>
+                            <select name="facility_type" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                                <option value="clinic">{{ __('messages.clinic') }}</option>
+                                <option value="hospital">{{ __('messages.hospital') }} ({{ __('messages.coming_soon') }})</option>
+                                <option value="diagnostic">{{ __('messages.diagnostic_center') }} ({{ __('messages.coming_soon') }})</option>
+                                <option value="other">{{ __('messages.other') }}</option>
+                            </select>
+                            <p class="text-xs text-slate-400 mt-1">{{ __('messages.facility_type_help') }}</p>
+                        </div>
+                        <!-- ============================================================= -->
 
                         <!-- Submit Button -->
                         <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 rounded-xl transition shadow-md">
@@ -107,5 +120,26 @@
     </section>
 
     @include('partials.footer')
+
+    <!-- ========== NEW: JavaScript Toggle for Facility Type ========== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const roleSelect = document.querySelector('select[name="role"]');
+            const facilityWrapper = document.getElementById('facility_type_wrapper');
+
+            function toggleFacility() {
+                if (roleSelect.value === 'clinic') {
+                    facilityWrapper.style.display = 'block';
+                } else {
+                    facilityWrapper.style.display = 'none';
+                }
+            }
+
+            roleSelect.addEventListener('change', toggleFacility);
+            toggleFacility(); // call on page load to set initial state
+        });
+    </script>
+    <!-- ============================================================= -->
+
 </body>
 </html>

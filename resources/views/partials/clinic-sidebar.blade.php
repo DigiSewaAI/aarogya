@@ -21,7 +21,7 @@
         </div>
         <div>
             <p class="font-bold text-slate-800">{{ $user->name }}</p>
-            <p class="text-xs text-slate-500">{{ __('messages.clinic') }}</p>
+            <p class="text-xs text-slate-500">{{ __('messages.facility') }}</p> {{-- ← "Clinic" → "Facility" --}}
         </div>
     </div>
 
@@ -57,7 +57,7 @@
             <span>⚙️</span> {{ __('messages.settings') }}
         </a>
 
-        {{-- ✅ Notifications --}}
+        {{-- Notifications --}}
         <a href="{{ route('clinic.notifications') }}" 
            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('clinic.notifications*') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
             <span>🔔</span> {{ __('messages.notifications') }}

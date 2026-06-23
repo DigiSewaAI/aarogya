@@ -20,6 +20,7 @@ class Clinic extends Model
         'description',
         'verification_status',
         'is_active',
+        'facility_type',   // ← नयाँ थपियो
     ];
 
     protected $casts = [
@@ -97,5 +98,20 @@ class Clinic extends Model
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
+    }
+
+    // ========== नयाँ थपिएको हेल्पर मेथड ==========
+    /**
+     * Get the human-readable label for facility type.
+     */
+    public function getFacilityTypeLabelAttribute()
+    {
+        return match($this->facility_type) {
+            'clinic'      => __('messages.clinic'),
+            'hospital'    => __('messages.hospital'),
+            'diagnostic'  => __('messages.diagnostic_center'),
+            'other'       => __('messages.other'),
+            default       => __('messages.clinic'),
+        };
     }
 }

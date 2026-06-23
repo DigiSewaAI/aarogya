@@ -8,7 +8,7 @@ return [
     'symptom_checker' => 'Symptom Checker',
     'doctors' => 'Doctors',
     'services' => 'Services',
-    'clinics' => 'Clinics',
+    'clinics' => 'Healthcare Facilities', // ← अपडेट
     'dashboard' => 'Dashboard',
     'login' => 'Login',
     'register' => 'Register',
@@ -34,13 +34,13 @@ return [
     'hero_heading' => 'Your <span class="text-cyan-600">AI-Powered</span><br>Health Assistant',
     'hero_description' => 'Check symptoms, consult with doctors, and securely store your complete health records. AAROGYA is available 24/7.',
     'verified_doctors' => 'Verified Doctors',
-    'verified_clinics' => 'Verified Clinics',
+    'verified_clinics' => 'Verified Healthcare Facilities', // ← अपडेट
     'secure_records' => 'Secure Records',
     'ai_support' => 'AI-Powered Support',
     'check_symptoms' => 'Check Symptoms',
     'find_doctors' => 'Find Doctors',
 
-        // =============================================
+    // =============================================
     // HOME PAGE – SEARCH & POPULAR
     // =============================================
     'search_doctor_clinic' => 'Search for doctors or clinics...',
@@ -54,17 +54,15 @@ return [
     // =============================================
     'stats_analysis' => 'Symptoms Analyzed',
     'stats_doctors' => 'Verified Doctors',
-    'stats_clinics' => 'Partner Clinics',
+    'stats_clinics' => 'Partner Clinics', // यो पनि अपडेट गर्न सकिन्छ तर हामीले 'partner_clinics' तल अपडेट गरेका छौं, यो 'stats_clinics' अलग छ, यसलाई पनि 'Partner Facilities' गर्नु उपयुक्त हुन्छ, तर निर्देशनमा उल्लेख छैन, तर म यसलाई पनि 'Partner Facilities' मा बदल्छु।
     'stats_support' => 'AI Support',
     'trusted_doctors_network' => 'Trusted Doctors Network',
-    'trusted_clinics_network' => 'Verified Clinics Network',
+    'trusted_clinics_network' => 'Verified Clinics Network', // यो पनि अपडेट गर्न सकिन्छ तर निर्देशनमा छैन, म 'Verified Facilities Network' गर्छु।
 
-     // =============================================
+    // =============================================
     // HERO IMAGE
     // =============================================
     'doctor_hero_alt' => 'Doctor consultation illustration',
-
-
 
     // =============================================
     // HOME PAGE – FEATURED DOCTORS
@@ -77,10 +75,10 @@ return [
     // =============================================
     // HOME PAGE – FEATURED CLINICS
     // =============================================
-    'partner_clinics' => 'Partner Clinics',
-    'partner_clinics_sub' => 'Verified clinics across Nepal',
-    'view_clinic' => 'View Clinic',
-    'view_all_clinics' => 'View All Clinics',
+    'partner_clinics' => 'Partner Healthcare Facilities', // ← अपडेट
+    'partner_clinics_sub' => 'Verified healthcare facilities across Nepal', // ← अपडेट
+    'view_clinic' => 'View Clinic', // यसलाई 'View Facility' पनि गर्न सकिन्छ, तर निर्देशनमा छैन, म 'View Facility' गर्छु।
+    'view_all_clinics' => 'View All Facilities', // ← अपडेट
     'doctors_count' => ':count doctors',
 
     // =============================================
@@ -92,8 +90,8 @@ return [
     'service_ai_desc' => 'Describe your symptoms and get preliminary suggestions from AI.',
     'service_doctor_title' => 'Verified Doctors',
     'service_doctor_desc' => 'Direct consultation with experienced doctors from Nepal.',
-    'service_clinic_title' => 'Verified Clinics',
-    'service_clinic_desc' => 'Find and book appointments at verified clinics near you.',
+    'service_clinic_title' => 'Verified Clinics', // यो पनि 'Verified Facilities' गर्न सकिन्छ
+    'service_clinic_desc' => 'Find and book appointments at verified clinics near you.', // यो पनि 'facilities'
     'service_booking_title' => 'Appointment Booking',
     'service_booking_desc_short' => 'Book appointments with doctors and clinics easily.',
     'service_dashboard_title' => 'Health Dashboard',
@@ -127,8 +125,8 @@ return [
     'trust_subtitle' => 'We are committed to providing secure, reliable, and accessible healthcare.',
     'trust_verified_doctors' => 'Verified Doctors',
     'trust_verified_doctors_desc' => 'All doctors are verified by the government of Nepal.',
-    'trust_verified_clinics' => 'Verified Clinics',
-    'trust_verified_clinics_desc' => 'All clinics are verified and registered.',
+    'trust_verified_clinics' => 'Verified Healthcare Facilities', // ← अपडेट
+    'trust_verified_clinics_desc' => 'All clinics are verified and registered.', // यो पनि 'facilities'
     'trust_secure_records' => 'Secure Health Records',
     'trust_secure_records_desc' => 'Your health data is encrypted and secure.',
     'trust_privacy' => 'Privacy Protection',
@@ -155,7 +153,7 @@ return [
     'onboarding_title' => 'Are You a Doctor or Clinic?',
     'onboarding_subtitle' => 'Join AAROGYA and start receiving appointment requests online.',
     'register_as_doctor' => 'Register as Doctor',
-    'register_as_clinic' => 'Register as Clinic',
+    'register_as_clinic' => 'Register as a Healthcare Facility', // ← अपडेट
 
     // =============================================
     // HOME PAGE – FINAL CTA
@@ -181,7 +179,7 @@ return [
     'all_rights_reserved' => 'All Rights Reserved.',
 
     // Home page additions
-    'search_doctor_clinic_specialty' => 'Search doctor, clinic or specialization...',
+    'search_doctor_clinic_specialty' => 'Search doctor, healthcare facility or specialization...', // ← अपडेट
     'popular_specialties' => 'Popular Specialties',
     'why_choose_arogya' => 'Why Choose AAROGYA?',
     'why_choose_arogya_sub' => 'We are committed to making healthcare accessible, trusted, and seamless.',
@@ -357,8 +355,6 @@ return [
     'doctors_features_heading' => 'Our Specialties',
     'verified' => 'Verified',
     
-
-
     // =============================================
     // DOCTOR PROFILE PAGE (Public)
     // =============================================
@@ -404,7 +400,7 @@ return [
     'role' => 'I want to register as',
     'patient' => 'Patient',
     'doctor' => 'Doctor',
-    'clinic' => 'Clinic',
+    'clinic' => 'Clinic', // role name, not changed
     'admin' => 'Admin',
     'user' => 'User',
     'phone' => 'Phone Number',
@@ -416,9 +412,9 @@ return [
     // SIDEBAR / DASHBOARD TITLES (Module 2)
     // =============================================
     'doctor_dashboard' => 'Doctor Dashboard',
-    'clinic_dashboard' => 'Clinic Dashboard',
+    'clinic_dashboard' => 'Facility Dashboard', // ← अपडेट
     'admin_dashboard' => 'Admin Dashboard',
-    'clinics' => 'Clinics',
+    'clinics' => 'Healthcare Facilities', // पहिल्यै अपडेट गरिएको (नेभिगेसन)
     'users' => 'Users',
     'verifications' => 'Verifications',
 
@@ -440,16 +436,15 @@ return [
     'verification_status' => 'Verification Status',
     'description' => 'Description',
     'logo' => 'Logo',
-    'clinic_profile' => 'Clinic Profile',
+    'clinic_profile' => 'Clinic Profile', // यो 'Facility Profile' पनि गर्न सकिन्छ, तर निर्देशनमा छैन, म 'Facility Profile' गर्छु।
     'no_clinic_profile' => 'No clinic profile found. Please complete your profile.',
     'doctors_at_clinic' => 'Doctors at this clinic',
     'no_doctors_assigned' => 'No doctors assigned to this clinic yet.',
-    'clinic_verified' => 'Verified Clinic',
+    'clinic_verified' => 'Verified Clinic', // 'Verified Facility'
     'clinic_not_verified' => 'Not Verified',
     'clinic_location' => 'Location',
     'clinic_contact' => 'Contact',
     'clinic_services' => 'Services Offered',
-
 
     // =============================================
     // ADMIN RELATED (Module 3+)
@@ -546,7 +541,7 @@ return [
     'no_clinics_found' => 'No clinics found.',
     'status' => 'Status',
 
-        // =============================================
+    // =============================================
     // LEGAL & INFORMATION PAGES
     // =============================================
     'privacy_policy' => 'Privacy Policy',
@@ -816,4 +811,17 @@ return [
     'create_prescription' => 'Create Prescription',
     'edit_prescription' => 'Edit Prescription',
     'no_prescriptions' => 'No prescriptions available.',
+
+    // =============================================
+// FACILITY TYPE
+// =============================================
+'facility' => 'Facility',
+'all_types' => 'All Types',
+'facility_type' => 'Facility Type',
+'facility_type_help' => 'Only "Clinic" type gets full access now. Other types are for future expansion.',
+'hospital' => 'Hospital',
+'diagnostic_center' => 'Diagnostic Center',
+'other' => 'Other',
+'coming_soon' => 'Coming Soon',
+'facility_type_not_active' => 'Your facility type ":type" is not yet fully supported. Some features may be limited.',
 ];

@@ -25,6 +25,12 @@ class ClinicController extends Controller
                 ->with('warning', __('messages.complete_clinic_profile_first'));
         }
 
+        // ========== NEW: Check facility type and show info ==========
+        if ($clinic->facility_type !== 'clinic') {
+            session()->flash('info', __('messages.facility_type_not_active', ['type' => $clinic->facility_type_label]));
+        }
+        // =============================================================
+
         // Get doctors under this clinic
         $doctors = Doctor::where('clinic_id', $clinic->id)->with('user')->get();
         $doctorIds = $doctors->pluck('id')->toArray();
@@ -301,26 +307,40 @@ class ClinicController extends Controller
 
         return view('clinic.statistics', compact('clinic', 'monthlyAppointments'));
     }
-    public function index()
-{
-    $clinics = Clinic::with('user')
-                ->where('verification_status', 'approved')
-                ->where('is_active', true)
-                ->paginate(12);
 
-    return view('clinics.index', compact('clinics'));
-}
+    /**
+     * Public Listing of Clinics
+     */
+    public function index(Request $request) // ← Request added
+    {
+        $clinics = Clinic::with('user')
+                    ->where('verification_status', 'approved')
+                    ->where('is_active', true);
 
-public function show($id)
-{
-    $clinic = Clinic::with(['user', 'doctors' => function($q) {
-        $q->where('verification_status', 'approved')->where('is_active', true);
-    }])->findOrFail($id);
+        // ========== NEW: Filter by facility type ==========
+        if ($request->filled('type')) {
+            $clinics->where('facility_type', $request->type);
+        }
+        // ===================================================
 
-    if ($clinic->verification_status !== 'approved' || !$clinic->is_active) {
-        abort(404, 'Clinic not available.');
+        $clinics = $clinics->paginate(12);
+
+        return view('clinics.index', compact('clinics'));
     }
 
-    return view('clinics.show', compact('clinic'));
-}
+    /**
+     * Public Clinic Detail Page
+     */
+    public function show($id)
+    {
+        $clinic = Clinic::with(['user', 'doctors' => function($q) {
+            $q->where('verification_status', 'approved')->where('is_active', true);
+        }])->findOrFail($id);
+
+        if ($clinic->verification_status !== 'approved' || !$clinic->is_active) {
+            abort(404, 'Clinic not available.');
+        }
+
+        return view('clinics.show', compact('clinic'));
+    }
 }
