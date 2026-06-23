@@ -36,10 +36,9 @@
 
                         {{-- QR Code Button --}}
                         <button onclick="showQRModal('{{ $appointment->id }}')" 
-                                class="text-cyan-600 hover:text-cyan-800 transition text-2xl" 
-                                title="{{ __('messages.view_qr') }}">
-                            📱
-                        </button>
+        class="bg-purple-100 text-purple-700 px-3 py-1 rounded-lg text-sm hover:bg-purple-200 transition flex items-center gap-1">
+    <span>📱</span> QR Code
+</button>
 
                         {{-- Cancel Button --}}
                         @if($appointment->status !== 'completed' && $appointment->status !== 'cancelled')
@@ -64,17 +63,30 @@
                                 {{ \Carbon\Carbon::parse($appointment->appointment_time)->format('h:i A') }}
                             </p>
                             <div class="my-4 flex justify-center">
-                                <img src="data:image/png;base64,{{ $appointment->qr_code_base64 }}" 
-                                     alt="QR Code for appointment #{{ $appointment->id }}" 
-                                     class="w-48 h-48">
+                                @if($appointment->qr_code_base64)
+                                    <img src="data:image/png;base64,{{ $appointment->qr_code_base64 }}" 
+                                         alt="QR Code for appointment #{{ $appointment->id }}" 
+                                         class="w-48 h-48">
+                                @else
+                                    <div class="w-48 h-48 bg-gray-100 rounded-xl flex items-center justify-center text-gray-400">
+                                        <div class="text-center">
+                                            <svg class="w-12 h-12 mx-auto text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/>
+                                            </svg>
+                                            <p class="text-xs mt-1">QR not available</p>
+                                        </div>
+                                    </div>
+                                @endif
                             </div>
                             <p class="text-xs text-slate-400">{{ __('messages.scan_to_view_appointment') }}</p>
                             <div class="mt-4 flex justify-center gap-2">
-                                <a href="data:image/png;base64,{{ $appointment->qr_code_base64 }}" 
-                                   download="appointment-{{ $appointment->id }}.png" 
-                                   class="bg-cyan-600 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-cyan-700 transition">
-                                    ⬇️ {{ __('messages.download') }}
-                                </a>
+                                @if($appointment->qr_code_base64)
+                                    <a href="data:image/png;base64,{{ $appointment->qr_code_base64 }}" 
+                                       download="appointment-{{ $appointment->id }}.png" 
+                                       class="bg-cyan-600 text-white px-4 py-1.5 rounded-lg text-sm hover:bg-cyan-700 transition">
+                                        ⬇️ {{ __('messages.download') }}
+                                    </a>
+                                @endif
                             </div>
                         </div>
                     </div>

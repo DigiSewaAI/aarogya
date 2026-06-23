@@ -7,6 +7,7 @@
         'admin' => __('messages.admin'),
         default => __('messages.patient'),
     };
+    $unreadCount = $user->unreadNotificationsCount();
 @endphp
 
 <div class="bg-white rounded-3xl shadow-xl p-6 sticky top-20">
@@ -47,7 +48,19 @@
             <span>📅</span> {{ __('messages.schedule') }}
         </a>
 
-        {{-- ✅ QR Code (New) --}}
+        {{-- ✅ Prescriptions (New) --}}
+        <a href="{{ route('doctor.prescriptions') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('doctor.prescriptions') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
+            <span>💊</span> {{ __('messages.prescriptions') }}
+        </a>
+
+        {{-- ✅ Follow-ups (New) --}}
+        <a href="{{ route('doctor.follow-ups') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('doctor.follow-ups') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
+            <span>🔄</span> {{ __('messages.follow_up') }}
+        </a>
+
+        {{-- ✅ QR Code --}}
         <a href="{{ route('doctor.qr.index') }}" 
            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('doctor.qr.*') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
             <span>📱</span> {{ __('messages.qr_code') }}
@@ -63,6 +76,15 @@
         <a href="{{ route('doctor.profile.edit') }}" 
            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('doctor.profile.edit') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
             <span>⚙️</span> {{ __('messages.settings') }}
+        </a>
+
+        {{-- ✅ Notifications (New) --}}
+        <a href="{{ route('doctor.notifications') }}" 
+           class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-cyan-50 transition {{ request()->routeIs('doctor.notifications') ? 'bg-cyan-50 text-cyan-600 font-semibold' : 'text-slate-600' }}">
+            <span>🔔</span> {{ __('messages.notifications') }}
+            @if($unreadCount > 0)
+                <span class="ml-auto bg-red-500 text-white text-xs px-2 py-1 rounded-full">{{ $unreadCount }}</span>
+            @endif
         </a>
     </nav>
 </div>

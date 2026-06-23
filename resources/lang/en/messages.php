@@ -8,6 +8,7 @@ return [
     'symptom_checker' => 'Symptom Checker',
     'doctors' => 'Doctors',
     'services' => 'Services',
+    'clinics' => 'Clinics',
     'dashboard' => 'Dashboard',
     'login' => 'Login',
     'register' => 'Register',
@@ -23,62 +24,276 @@ return [
     'start' => 'Get Started',
 
     // =============================================
-    // HOME PAGE
+    // HOME PAGE – HERO
     // =============================================
     'welcome_title' => 'Welcome to AAROGYA!',
     'welcome_subtitle' => 'Your AI-Powered Health Assistant',
-    'hero_badge' => '🤖 AI-Powered | For Nepal',
+    'hero_badge' => '🤖 AI-Powered | Nepal\'s Trusted Health Platform',
+    'hero_headline' => 'Find Doctors, Book Appointments & Get AI Health Support',
+    'hero_subheadline' => 'Book appointments, check symptoms using AI, consult verified doctors, and manage your health records securely from one platform.',
     'hero_heading' => 'Your <span class="text-cyan-600">AI-Powered</span><br>Health Assistant',
     'hero_description' => 'Check symptoms, consult with doctors, and securely store your complete health records. AAROGYA is available 24/7.',
+    'verified_doctors' => 'Verified Doctors',
+    'verified_clinics' => 'Verified Clinics',
+    'secure_records' => 'Secure Records',
+    'ai_support' => 'AI-Powered Support',
     'check_symptoms' => 'Check Symptoms',
     'find_doctors' => 'Find Doctors',
-    'stats_analysis' => 'Symptoms Analyzed',
-    'stats_doctors' => 'Doctors',
-    'stats_support' => 'AI Support',
 
-    // Services Section (Home)
+        // =============================================
+    // HOME PAGE – SEARCH & POPULAR
+    // =============================================
+    'search_doctor_clinic' => 'Search for doctors or clinics...',
+    'search' => 'Search',
+    'popular' => 'Popular',
+    'growing_network' => 'Growing Network',
+    'available' => 'Available',
+
+    // =============================================
+    // HOME PAGE – STATISTICS
+    // =============================================
+    'stats_analysis' => 'Symptoms Analyzed',
+    'stats_doctors' => 'Verified Doctors',
+    'stats_clinics' => 'Partner Clinics',
+    'stats_support' => 'AI Support',
+    'trusted_doctors_network' => 'Trusted Doctors Network',
+    'trusted_clinics_network' => 'Verified Clinics Network',
+
+     // =============================================
+    // HERO IMAGE
+    // =============================================
+    'doctor_hero_alt' => 'Doctor consultation illustration',
+
+
+
+    // =============================================
+    // HOME PAGE – FEATURED DOCTORS
+    // =============================================
+    'featured_doctors' => 'Featured Doctors',
+    'featured_doctors_sub' => 'Meet our top verified doctors across Nepal',
+    'view_profile' => 'View Profile',
+    'view_all_doctors' => 'View All Doctors',
+
+    // =============================================
+    // HOME PAGE – FEATURED CLINICS
+    // =============================================
+    'partner_clinics' => 'Partner Clinics',
+    'partner_clinics_sub' => 'Verified clinics across Nepal',
+    'view_clinic' => 'View Clinic',
+    'view_all_clinics' => 'View All Clinics',
+    'doctors_count' => ':count doctors',
+
+    // =============================================
+    // HOME PAGE – SERVICES
+    // =============================================
     'our_services' => 'Our Services',
     'services_subtitle' => 'AI + Healthcare, the perfect combination',
     'service_ai_title' => 'AI Symptom Analysis',
     'service_ai_desc' => 'Describe your symptoms and get preliminary suggestions from AI.',
     'service_doctor_title' => 'Verified Doctors',
     'service_doctor_desc' => 'Direct consultation with experienced doctors from Nepal.',
+    'service_clinic_title' => 'Verified Clinics',
+    'service_clinic_desc' => 'Find and book appointments at verified clinics near you.',
+    'service_booking_title' => 'Appointment Booking',
+    'service_booking_desc_short' => 'Book appointments with doctors and clinics easily.',
     'service_dashboard_title' => 'Health Dashboard',
     'service_dashboard_desc' => 'Manage reports, history, and medications in one place.',
+    'service_records_title' => 'Medical Records',
+    'service_records_desc' => 'Securely store and access your medical records anytime.',
+    // Additional service keys from your original file
     'service_tracking_title' => 'Medication Tracking',
     'service_tracking_desc' => 'Easily track medication timing and health records.',
 
-    // How It Works
+    // =============================================
+    // HOME PAGE – HOW IT WORKS
+    // =============================================
     'how_it_works' => 'How It Works?',
     'step1_title' => 'Write Symptoms',
     'step1_desc' => 'Describe your health issue.',
     'step2_title' => 'AI Analysis',
     'step2_desc' => 'AI gives possible causes and suggestions.',
-    'step3_title' => 'Consult Doctor',
-    'step3_desc' => 'Take expert doctor consultation.',
+    'step3_title' => 'Choose Doctor or Clinic',
+    'step3_desc_choose' => 'Select a verified doctor or clinic.',
+    'step3_desc' => 'Take expert doctor consultation.', // from your file
+    'step4_title' => 'Book Appointment',
+    'step4_desc' => 'Choose date and time that works for you.',
+    'step5_title' => 'Receive Consultation',
+    'step5_desc' => 'Get expert consultation from your doctor.',
 
-    // Testimonials
+    // =============================================
+    // HOME PAGE – TRUST
+    // =============================================
+    'trust_title' => 'Why Trust AAROGYA?',
+    'trust_subtitle' => 'We are committed to providing secure, reliable, and accessible healthcare.',
+    'trust_verified_doctors' => 'Verified Doctors',
+    'trust_verified_doctors_desc' => 'All doctors are verified by the government of Nepal.',
+    'trust_verified_clinics' => 'Verified Clinics',
+    'trust_verified_clinics_desc' => 'All clinics are verified and registered.',
+    'trust_secure_records' => 'Secure Health Records',
+    'trust_secure_records_desc' => 'Your health data is encrypted and secure.',
+    'trust_privacy' => 'Privacy Protection',
+    'trust_privacy_desc' => 'We value your privacy and protect your data.',
+    'trust_ai_assistance' => 'AI Assistance',
+    'trust_ai_assistance_desc' => 'Get instant support from our AI.',
+    'trust_24_7_support' => '24/7 Support',
+    'trust_24_7_support_desc' => 'We are available anytime to help you.',
+
+    // =============================================
+    // HOME PAGE – TESTIMONIALS
+    // =============================================
     'testimonials' => 'User Reviews',
-    'testimonial1' => '"AAROGYA helped me get instant health information."',
-    'testimonial2' => '"Online consultation with doctors became very easy."',
-    'testimonial3' => '"Excellent AI health platform for Nepal."',
+    'testimonial1' => 'AAROGYA helped me get instant health information.',
+    'testimonial2' => 'Online consultation with doctors became very easy.',
+    'testimonial3' => 'Excellent AI health platform for Nepal.',
+    'kathmandu' => 'Kathmandu',
+    'pokhara' => 'Pokhara',
+    'biratnagar' => 'Biratnagar',
 
-    // CTA
+    // =============================================
+    // HOME PAGE – ONBOARDING CTA
+    // =============================================
+    'onboarding_title' => 'Are You a Doctor or Clinic?',
+    'onboarding_subtitle' => 'Join AAROGYA and start receiving appointment requests online.',
+    'register_as_doctor' => 'Register as Doctor',
+    'register_as_clinic' => 'Register as Clinic',
+
+    // =============================================
+    // HOME PAGE – FINAL CTA
+    // =============================================
+    'final_cta_heading' => 'Take Control of Your Health Today',
+    'final_cta_desc' => 'Join thousands of satisfied users and start your healthcare journey.',
+    // Additional CTA from your file
     'cta_heading' => 'Your Health is Our Priority',
     'cta_desc' => 'Create your free account today and experience healthcare like never before.',
     'cta_button' => 'Start Free',
 
-    // Footer
+    // =============================================
+    // HOME PAGE – FOOTER
+    // =============================================
     'footer_tagline' => 'AI-Powered Health Assistant',
     'footer_important' => 'Important',
     'footer_disclaimer' => 'Any health decision should be made only after consulting a doctor.',
+    'footer_quick_links' => 'Quick Links',
+    'footer_legal' => 'Legal',
+    'privacy_policy' => 'Privacy Policy',
+    'terms_of_service' => 'Terms of Service',
+    'contact' => 'Contact',
+    'all_rights_reserved' => 'All Rights Reserved.',
+
+    // Home page additions
+    'search_doctor_clinic_specialty' => 'Search doctor, clinic or specialization...',
+    'popular_specialties' => 'Popular Specialties',
+    'why_choose_arogya' => 'Why Choose AAROGYA?',
+    'why_choose_arogya_sub' => 'We are committed to making healthcare accessible, trusted, and seamless.',
+    'available_doctors' => 'Available',
+    'available_clinics' => 'Available',
+    'easy_booking' => 'Easy Booking',
+    'bilingual_platform' => 'Bilingual Platform',
+    'bilingual_platform_desc' => 'Available in Nepali & English',
+    'recent_verified_doctors' => 'Recent Verified Doctors',
+    'latest_doctors_joined' => 'Latest doctors who joined AAROGYA',
+    'no_doctors_yet' => 'No doctors yet',
+
+    // =============================================
+    // AUTH
+    // =============================================
+    'auth_register_title' => 'Create Free Account',
+    'auth_register_subtitle' => 'Get full access to AAROGYA services',
+    'auth_name' => 'Full Name',
+    'auth_email' => 'Email Address',
+    'auth_password' => 'Password',
+    'auth_password_confirmation' => 'Confirm Password',
+    'auth_register_button' => 'Create Account',
+    'auth_already_account' => 'Already have an account?',
+    'auth_login' => 'Login',
+    'auth_login_title' => 'Login',
+    'auth_login_button' => 'Login',
+    'auth_no_account' => "Don't have an account?",
+    'auth_register' => 'Register',
+    'auth_forgot_password' => 'Forgot Password?',
+    'auth_email_error' => 'These credentials do not match our records.',
+
+    // =============================================
+    // GENERIC
+    // =============================================
+    'yes' => 'Yes',
+    'no' => 'No',
+    'save' => 'Save',
+    'cancel' => 'Cancel',
+    'delete' => 'Delete',
+    'edit' => 'Edit',
+    'view' => 'View',
+    'close' => 'Close',
+    'back' => 'Back',
+    'continue' => 'Continue',
+    'submit' => 'Submit',
+    'loading' => 'Loading...',
+    'success' => 'Success!',
+    'error' => 'Error!',
+    'warning' => 'Warning!',
+    'info' => 'Info',
+    'n/a' => 'N/A',
+    'download' => 'Download',
+
+    // =============================================
+    // APPOINTMENT SYSTEM
+    // =============================================
+    'book_appointment' => 'Book Appointment',
+    'appointment_booked' => 'Appointment booked successfully! Waiting for doctor approval.',
+    'appointment_booked_success' => 'Appointment booked successfully! Waiting for doctor approval.',
+    'my_appointments' => 'My Appointments',
+    'no_appointments' => 'No appointments yet.',
+    'find_doctor' => 'Find a Doctor',
+    'confirm_booking' => 'Confirm Booking',
+    'select_date' => 'Select date first',
+    'no_slots' => 'No slots available',
+    'appointment_cancelled' => 'Appointment cancelled successfully.',
+    'cannot_cancel' => 'This appointment cannot be cancelled.',
+    'booking_form_title' => 'Book Appointment',
+    'booking_with' => 'with :name',
+    'appointment_date_label' => 'Appointment Date',
+    'appointment_time_label' => 'Appointment Time',
+    'symptoms_label' => 'Symptoms',
+    'symptoms_placeholder' => 'Describe your symptoms...',
+    'notes_label' => 'Additional Notes',
+    'notes_placeholder' => 'Any additional information...',
+    'slot_loading' => 'Loading...',
+    'slot_select' => 'Select time',
+    'slot_unavailable' => 'No slots available',
+    'slot_error' => 'Error loading slots',
+    'appointment_status_pending' => 'Pending',
+    'appointment_status_approved' => 'Approved',
+    'appointment_status_rejected' => 'Rejected',
+    'appointment_status_completed' => 'Completed',
+    'appointment_status_cancelled' => 'Cancelled',
+    'upcoming' => 'Upcoming',
+    'history' => 'History',
+    'upcoming_appointments' => 'Upcoming Appointments',
+    'no_upcoming_appointments' => 'No upcoming appointments.',
+    'login_to_book' => 'Login to Book',
+    'back_to_doctors' => 'Back to Doctors',
+
+    // =============================================
+    // QR CODE SYSTEM
+    // =============================================
+    'qr_code' => 'QR Code',
+    'qr_scan_message' => 'Scan this QR code to view your profile',
+    'download_qr' => 'Download QR',
+    'print_qr' => 'Print QR',
+    'share_qr' => 'Share QR',
+    'share_qr_description' => 'Share your QR code with patients',
+    'qr_info_title' => 'About QR Code',
+    'qr_info_1' => 'Patients can scan to view your profile',
+    'qr_info_2' => 'Download and print for your clinic',
+    'qr_info_3' => 'Share via social media or email',
 
     // =============================================
     // SYMPTOM CHECKER
     // =============================================
+    'check_symptoms' => 'Check Symptoms', // duplicate but kept for consistency
     'symptom_title' => 'Symptom Checker',
     'symptom_badge' => '🤖 AI-Powered | Quick Analysis',
-    'symptom_heading' => '🔍 Symptom <span class="text-cyan-600">Checker</span>',
+    'symptom_heading' => '🔍 Symptom Checker',
     'symptom_subtitle' => 'Write your symptoms in Nepali or English – AI will instantly suggest.',
     'symptom_label' => 'Your Symptoms',
     'symptom_placeholder' => 'e.g., headache, fever, cough...',
@@ -114,7 +329,7 @@ return [
     'symptom_benefit3_desc' => 'Suggestions for nearby specialist doctors',
 
     // =============================================
-    // DOCTORS PAGE (Public)
+    // DOCTORS
     // =============================================
     'doctors_title' => 'Our Doctors',
     'doctors_badge' => '👨‍⚕️ Specialists | Verified Doctors',
@@ -134,13 +349,15 @@ return [
     'doctor_fee' => 'Consultation Fee',
     'doctor_available_today' => 'Available Today',
     'doctor_book' => 'Book',
-    'doctor_profile' => 'Profile',
-    'doctor_experience_years' => 'years experience',
+    'doctor_profile' => 'Doctor consulting with a patient',
+    'doctor_experience_years' => 'years',
     'currency' => 'Rs',
     'doctor_rating' => '4.9',
     'doctor_reviews_count' => ':count reviews',
     'doctors_features_heading' => 'Our Specialties',
     'verified' => 'Verified',
+    
+
 
     // =============================================
     // DOCTOR PROFILE PAGE (Public)
@@ -155,7 +372,7 @@ return [
     'verified_doctor' => 'Verified Doctor',
     'online_consultation_available' => 'Online Consultation Available',
     'book_in_advance' => 'Book in Advance',
-
+    'go_to_appointments' => 'Go to Appointments',
     // =============================================
     // DASHBOARD (Patient)
     // =============================================
@@ -172,25 +389,6 @@ return [
     'dashboard_reports_action' => 'View',
 
     // =============================================
-    // AUTH
-    // =============================================
-    'auth_register_title' => 'Create Free Account',
-    'auth_register_subtitle' => 'Get full access to AAROGYA services',
-    'auth_name' => 'Full Name',
-    'auth_email' => 'Email Address',
-    'auth_password' => 'Password',
-    'auth_password_confirmation' => 'Confirm Password',
-    'auth_register_button' => 'Create Account',
-    'auth_already_account' => 'Already have an account?',
-    'auth_login' => 'Login',
-    'auth_login_title' => 'Login',
-    'auth_login_button' => 'Login',
-    'auth_no_account' => "Don't have an account?",
-    'auth_register' => 'Register',
-    'auth_forgot_password' => 'Forgot Password?',
-    'auth_email_error' => 'These credentials do not match our records.',
-
-    // =============================================
     // ERRORS & VALIDATION
     // =============================================
     'error_occurred' => 'An error occurred. Please try again.',
@@ -199,28 +397,6 @@ return [
     'validation_min' => 'The :attribute must be at least :min characters.',
     'validation_confirmed' => 'The :attribute confirmation does not match.',
     'access_denied' => 'Access Denied. You do not have permission to view this page.',
-
-    // =============================================
-    // GENERIC
-    // =============================================
-    'yes' => 'Yes',
-    'no' => 'No',
-    'save' => 'Save',
-    'cancel' => 'Cancel',
-    'delete' => 'Delete',
-    'edit' => 'Edit',
-    'view' => 'View',
-    'close' => 'Close',
-    'back' => 'Back',
-    'continue' => 'Continue',
-    'submit' => 'Submit',
-    'loading' => 'Loading...',
-    'success' => 'Success!',
-    'error' => 'Error!',
-    'warning' => 'Warning!',
-    'info' => 'Info',
-    'n/a' => 'N/A',
-    'download' => 'Download',
 
     // =============================================
     // ROLES & REGISTRATION (Module 2)
@@ -266,6 +442,14 @@ return [
     'logo' => 'Logo',
     'clinic_profile' => 'Clinic Profile',
     'no_clinic_profile' => 'No clinic profile found. Please complete your profile.',
+    'doctors_at_clinic' => 'Doctors at this clinic',
+    'no_doctors_assigned' => 'No doctors assigned to this clinic yet.',
+    'clinic_verified' => 'Verified Clinic',
+    'clinic_not_verified' => 'Not Verified',
+    'clinic_location' => 'Location',
+    'clinic_contact' => 'Contact',
+    'clinic_services' => 'Services Offered',
+
 
     // =============================================
     // ADMIN RELATED (Module 3+)
@@ -319,21 +503,7 @@ return [
     'minutes' => 'minutes',
 
     // =============================================
-    // QR CODE SYSTEM
-    // =============================================
-    'qr_code' => 'QR Code',
-    'qr_scan_message' => 'Scan this QR code to view your profile',
-    'download_qr' => 'Download QR',
-    'print_qr' => 'Print QR',
-    'share_qr' => 'Share QR',
-    'share_qr_description' => 'Share your QR code with patients',
-    'qr_info_title' => 'About QR Code',
-    'qr_info_1' => 'Patients can scan to view your profile',
-    'qr_info_2' => 'Download and print for your clinic',
-    'qr_info_3' => 'Share via social media or email',
-
-    // =============================================
-    // APPOINTMENTS (Module 6)
+    // APPOINTMENTS (Module 6) – extra keys
     // =============================================
     'total' => 'Total',
     'all_doctors' => 'All Doctors',
@@ -352,11 +522,6 @@ return [
     'doctor_unavailable' => 'This doctor is not available.',
     'doctor_not_available_time' => 'Doctor is not available at this time.',
     'slot_already_booked' => 'This time slot is already booked. Please choose another time.',
-    'upcoming' => 'Upcoming',
-    'history' => 'History',
-    'upcoming_appointments' => 'Upcoming Appointments',
-    'no_upcoming_appointments' => 'No upcoming appointments.',
-    'back_to_doctors' => 'Back to Doctors',
 
     // =============================================
     // ADMIN PANEL (Module 7)
@@ -381,6 +546,114 @@ return [
     'no_clinics_found' => 'No clinics found.',
     'status' => 'Status',
 
+        // =============================================
+    // LEGAL & INFORMATION PAGES
+    // =============================================
+    'privacy_policy' => 'Privacy Policy',
+    'terms_of_service' => 'Terms of Service',
+    'contact' => 'Contact Us',
+    'about' => 'About Us',
+    'contact_sent' => 'Your message has been sent successfully. We will get back to you soon.',
+
+    // Privacy Policy
+    'privacy_intro' => 'AAROGYA is committed to protecting your privacy and ensuring the security of your personal information.',
+    'privacy_collect_title' => 'Information We Collect',
+    'privacy_collect_patients' => 'Patients: Name, Email, Phone, Profile Information',
+    'privacy_collect_doctors' => 'Doctors: Professional Information, Registration Details',
+    'privacy_collect_clinics' => 'Clinics: Clinic Information',
+    'privacy_collect_system' => 'System Data: Login Information, Device Information, Usage Data',
+    'privacy_use_title' => 'How We Use Information',
+    'privacy_use_1' => 'Appointment Management',
+    'privacy_use_2' => 'User Authentication',
+    'privacy_use_3' => 'Service Improvement',
+    'privacy_use_4' => 'Communication',
+    'privacy_use_5' => 'Security',
+    'privacy_medical_title' => 'Medical Data Protection',
+    'privacy_medical_desc' => 'Medical records are protected and accessible only to authorized users.',
+    'privacy_sharing_title' => 'Data Sharing',
+    'privacy_sharing_desc' => 'AAROGYA does not sell personal data. Data is shared only when required for platform functionality.',
+    'privacy_rights_title' => 'User Rights',
+    'privacy_rights_1' => 'View Data',
+    'privacy_rights_2' => 'Update Data',
+    'privacy_rights_3' => 'Request Deletion',
+    'privacy_rights_4' => 'Contact Support',
+    'privacy_contact' => 'For any privacy concerns, please contact us at support@aarogya.com',
+
+    // Terms of Service
+    'terms_acceptance' => 'Acceptance of Terms',
+    'terms_acceptance_desc' => 'By using AAROGYA, you agree to these Terms of Service.',
+    'terms_responsibilities' => 'User Responsibilities',
+    'terms_responsibilities_1' => 'Provide accurate information',
+    'terms_responsibilities_2' => 'Protect login credentials',
+    'terms_responsibilities_3' => 'Use platform legally',
+    'terms_doctor_title' => 'Doctor Responsibilities',
+    'terms_doctor_1' => 'Maintain valid credentials',
+    'terms_doctor_2' => 'Provide accurate profile information',
+    'terms_doctor_3' => 'Follow applicable healthcare regulations',
+    'terms_clinic_title' => 'Clinic Responsibilities',
+    'terms_clinic_1' => 'Provide accurate clinic information',
+    'terms_clinic_2' => 'Manage doctors responsibly',
+    'terms_ai_title' => 'AI Disclaimer',
+    'terms_ai_desc' => 'AAROGYA AI does NOT provide medical diagnosis. AI suggestions are informational only.',
+    'terms_ai_alert' => 'Always consult a licensed healthcare professional.',
+    'terms_liability_title' => 'Limitation of Liability',
+    'terms_liability_desc' => 'AAROGYA is a technology platform and does not replace professional medical advice.',
+    'terms_termination_title' => 'Account Termination',
+    'terms_termination_desc' => 'Admin may suspend accounts violating policies.',
+
+    // Contact Page
+    'contact_send' => 'Send Message',
+    'contact_name' => 'Your Name',
+    'contact_email' => 'Email Address',
+    'contact_subject' => 'Subject',
+    'contact_message' => 'Message',
+    'contact_success' => 'Your message has been sent successfully!',
+    'contact_info_title' => 'Get in Touch',
+    'contact_info_email' => 'Email: support@aarogya.com',
+    'contact_info_phone' => 'Phone: +977-XXXXXXXXXX',
+    'contact_info_location' => 'Location: Kathmandu, Nepal',
+    'contact_email_label' => 'Email',
+    'contact_phone_label' => 'Phone',
+    'contact_location_label' => 'Location',
+    'contact_working_hours' => 'Working Hours',
+    'contact_24_7_support' => '24/7 Support Available',
+    'contact_response_time' => 'We will get back to you within 24 hours.',
+    'contact_deleted' => 'Contact message deleted successfully.',
+    'contacts' => 'Contact Messages',
+    'read' => 'Read',
+    'unread' => 'Unread',
+    'contact_message_deleted' => 'Contact message deleted successfully.',
+    'no_contacts_found' => 'No contact messages found.',
+    'contact_submitted' => 'Your message has been submitted successfully.',
+    'contact_message_read' => 'Message marked as read.',
+    'reports' => 'Reports',
+    'contacts' => 'Contact Messages',
+    'notifications' => 'Notifications',
+    'search_patient' => 'Search patient...',
+    'select_patient' => 'Select patient',
+    'diagnosis_placeholder' => 'Enter diagnosis details...',
+    'notes_placeholder' => 'Enter any additional notes...',
+    'valid_until' => 'Valid Until',
+    'add_medicine' => 'Add Medicine',
+    'remove' => 'Remove',
+    'at_least_one_medicine' => 'Please add at least one medicine.',
+    'expired' => 'Expired',
+    'create_prescription_subtitle' => 'Create a new prescription for your patient',
+    'medicines' => 'Medicines',
+    'search_patient' => 'Search patient...',
+
+    // About Page
+    'about_mission_title' => 'Our Mission',
+    'about_mission_desc' => 'Make healthcare accessible through technology.',
+    'about_vision_title' => 'Our Vision',
+    'about_vision_desc' => 'Connect patients, doctors, and clinics through one trusted platform.',
+    'about_why_title' => 'Why AAROGYA?',
+    'about_why_1' => 'AI Symptom Checker',
+    'about_why_2' => 'Verified Doctors',
+    'about_why_3' => 'Verified Clinics',
+    'about_why_4' => 'Appointment Booking',
+    'about_why_5' => 'Secure Health Records',
+
     // =============================================
     // SERVICES PAGE (Module 1)
     // =============================================
@@ -402,7 +675,6 @@ return [
     'service_dashboard_feature2' => 'Upload/Download Reports',
     'service_dashboard_feature3' => 'Medication Reminders',
     'service_dashboard_cta' => 'Open Dashboard',
-    'service_booking_title' => 'Appointment Booking',
     'service_booking_desc' => 'Easily book appointments with nearby doctors or hospitals. Appointment reminders available.',
     'service_booking_feature1' => 'Hassle-free Process',
     'service_booking_feature2' => 'Auto Email/SMS Notifications',
@@ -431,34 +703,117 @@ return [
     'why_support_desc' => 'Customer service always open',
 
     // =============================================
-    // ✅ APPOINTMENT SYSTEM (Module 8)
+    // ✅ NEW: PHASE 2 FEATURES
     // =============================================
-    'book_appointment' => 'Book Appointment',
-    'appointment_booked_success' => 'Appointment booked successfully! Waiting for doctor approval.',
-    'appointment_booked' => 'Appointment booked successfully! Waiting for doctor approval.',
-    'my_appointments' => 'My Appointments',
-    'no_appointments' => 'No appointments yet.',
-    'find_doctor' => 'Find a Doctor',
-    'confirm_booking' => 'Confirm Booking',
-    'select_date' => 'Select date first',
-    'no_slots' => 'No slots available',
+
+    // Email Subjects
+    'welcome_email_subject' => 'Welcome to AAROGYA, :name!',
+    'appointment_booked_email_subject' => 'Appointment Booked Successfully',
+    'appointment_approved_email_subject' => 'Appointment Approved!',
+    'appointment_rejected_email_subject' => 'Appointment Rejected',
+    'appointment_completed_email_subject' => 'Appointment Completed',
+    'doctor_approved_email_subject' => 'Your Doctor Account has been Approved!',
+    'clinic_approved_email_subject' => 'Your Clinic Account has been Approved!',
+
+    // Notification Messages
+    'notification_appointment_booked' => 'Your appointment with :doctor on :date at :time has been booked successfully.',
+    'notification_appointment_request' => 'You have a new appointment request from :patient on :date at :time.',
+    'notification_appointment_approved' => 'Your appointment with :doctor on :date at :time has been approved.',
+    'notification_appointment_rejected' => 'Your appointment with :doctor on :date has been rejected.',
+    'notification_appointment_completed' => 'Your appointment with :doctor on :date has been completed.',
+    'notification_appointment_cancelled' => 'Your appointment with :doctor on :date has been cancelled.',
+    'notification_doctor_verified' => 'Your doctor account ":name" has been verified successfully.',
+    'notification_doctor_rejected' => 'Your doctor account ":name" has been rejected. Please contact support.',
+    'notification_clinic_verified' => 'Your clinic ":name" has been verified successfully.',
+    'notification_clinic_rejected' => 'Your clinic ":name" has been rejected. Please contact support.',
+    'notification_account_status_changed' => 'Your account has been :status.',
+
+    // Appointment Actions
+    'appointment_approved' => 'Appointment approved successfully.',
+    'appointment_rejected' => 'Appointment rejected successfully.',
+    'appointment_completed' => 'Appointment completed successfully.',
     'appointment_cancelled' => 'Appointment cancelled successfully.',
-    'cannot_cancel' => 'This appointment cannot be cancelled.',
-    'booking_form_title' => 'Book Appointment',
-    'booking_with' => 'with :name',
-    'appointment_date_label' => 'Appointment Date',
-    'appointment_time_label' => 'Appointment Time',
-    'symptoms_label' => 'Symptoms',
-    'symptoms_placeholder' => 'Describe your symptoms...',
-    'notes_label' => 'Additional Notes',
-    'notes_placeholder' => 'Any additional information...',
-    'slot_loading' => 'Loading...',
-    'slot_select' => 'Select time',
-    'slot_unavailable' => 'No slots available',
-    'slot_error' => 'Error loading slots',
-    'appointment_status_pending' => 'Pending',
-    'appointment_status_approved' => 'Approved',
-    'appointment_status_rejected' => 'Rejected',
-    'appointment_status_completed' => 'Completed',
-    'appointment_status_cancelled' => 'Cancelled',
+    'cannot_cancel_completed' => 'Cannot cancel a completed appointment.',
+    'no_reason_provided' => 'No reason was provided.',
+
+    // Health Profile
+    'health_profile' => 'Health Profile',
+    'health_profile_subtitle' => 'Manage your health information',
+    'health_profile_updated' => 'Health profile updated successfully',
+    'blood_group' => 'Blood Group',
+    'select_blood_group' => 'Select Blood Group',
+    'allergies' => 'Allergies',
+    'allergies_placeholder' => 'e.g. Penicillin, Dust, Pollen',
+    'chronic_diseases' => 'Chronic Diseases',
+    'chronic_diseases_placeholder' => 'e.g. Diabetes, Hypertension, Asthma',
+    'current_medications' => 'Current Medications',
+    'current_medications_placeholder' => 'e.g. Metformin 500mg, Amlodipine 5mg',
+    'height_cm' => 'Height (cm)',
+    'weight_kg' => 'Weight (kg)',
+    'emergency_contact_name' => 'Emergency Contact Name',
+    'emergency_contact_name_placeholder' => 'e.g. Jane Doe',
+    'emergency_contact_number' => 'Emergency Contact Number',
+    'emergency_contact_number_placeholder' => 'e.g. +977-9841XXXXXX',
+    'save_profile' => 'Save Profile',
+
+    // Medical Records
+    'medical_records' => 'Medical Records',
+    'upload_record' => 'Upload Record',
+    'record_uploaded' => 'Record uploaded successfully',
+    'record_deleted' => 'Record deleted successfully',
+    'record_share_updated' => 'Share status updated',
+    'no_records' => 'No medical records uploaded yet',
+    'upload_first_record' => 'Upload your first record',
+    'confirm_delete_record' => 'Are you sure you want to delete this record?',
+    'category_lab_report' => 'Lab Report',
+    'category_prescription' => 'Prescription',
+    'category_x_ray' => 'X-Ray',
+    'category_scan_report' => 'Scan Report',
+    'category_vaccination' => 'Vaccination',
+    'category_other' => 'Other',
+
+    // Profile Completion
+    'profile_completion' => 'Profile Completion',
+    'complete' => 'Complete',
+
+    // Availability
+    'available_today' => 'Available Today',
+    'fully_booked' => 'Fully Booked',
+    'offline' => 'Offline',
+
+    // =============================================
+    // NOTIFICATIONS
+    // =============================================
+    'mark_all_as_read' => 'Mark all as read',
+    'view_details' => 'View details',
+    'no_notifications' => 'No notifications',
+    'notifications' => 'Notifications',
+    'mark_as_read' => 'Mark as read',
+    'notification_appointment_request' => 'You have a new appointment request from :patient on :date at :time.',
+    'notification_appointment_approved' => 'Your appointment with :doctor on :date at :time has been approved.',
+    'notification_appointment_rejected' => 'Your appointment with :doctor on :date has been rejected.',
+    'notification_appointment_completed' => 'Your appointment with :doctor on :date has been completed.',
+    'notification_appointment_cancelled' => 'Your appointment with :doctor on :date has been cancelled.',
+
+    // Follow-ups
+    'follow_up_date' => 'Follow-Up Date',
+    'follow_up' => 'Follow-Up',
+    'follow_ups' => 'Follow-Ups',
+    'no_follow_ups' => 'No follow-ups found.',
+    'scheduled' => 'Scheduled',
+    'completed' => 'Completed',
+    'cancelled' => 'Cancelled',
+
+    // Prescription
+    'prescription' => 'Prescription',
+    'prescriptions' => 'Prescriptions',
+    'diagnosis' => 'Diagnosis',
+    'medicine_name' => 'Medicine Name',
+    'dosage' => 'Dosage',
+    'frequency' => 'Frequency',
+    'duration' => 'Duration',
+    'instructions' => 'Instructions',
+    'create_prescription' => 'Create Prescription',
+    'edit_prescription' => 'Edit Prescription',
+    'no_prescriptions' => 'No prescriptions available.',
 ];

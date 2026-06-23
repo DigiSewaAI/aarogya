@@ -158,4 +158,53 @@ class Doctor extends Model
             'url' => route('doctor.show', $this->id),
         ]);
     }
+    // Add to app/Models/Doctor.php
+
+public function getAvailabilityStatusAttribute()
+{
+    $today = now()->toDateString();
+    $now = now()->format('H:i');
+    
+    // Check if doctor has any appointment today
+    $hasAppointmentToday = Appointment::where('doctor_id', $this->id)
+        ->where('appointment_date', $today)
+        ->whereIn('status', ['approved', 'pending'])
+        ->exists();
+    
+    // Check if doctor has schedule for today
+    $scheduleToday = DoctorSchedule::where('doctor_id', $this->id)
+        ->where('day_of_week', now()->format('l'))
+        ->where('is_active', true)
+        ->first();
+    
+    if (!$scheduleToday) {
+        return 'offline';
+    }
+    
+    if ($hasAppointmentToday) {
+        return 'fully_booked';
+    }
+    
+    return 'available';
+}
+
+public function getAvailabilityBadgeAttribute()
+{
+    return match($this->availability_status) {
+        'available' => 'bg-green-100 text-green-700',
+        'fully_booked' => 'bg-orange-100 text-orange-700',
+        'offline' => 'bg-gray-100 text-gray-700',
+        default => 'bg-gray-100 text-gray-700',
+    };
+}
+
+public function getAvailabilityLabelAttribute()
+{
+    return match($this->availability_status) {
+        'available' => __('messages.available_today'),
+        'fully_booked' => __('messages.fully_booked'),
+        'offline' => __('messages.offline'),
+        default => __('messages.offline'),
+    };
+}
 }

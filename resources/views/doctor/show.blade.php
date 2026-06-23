@@ -159,3 +159,14 @@
     </div>
 </div>
 @endsection
+
+{{-- ✅ Page-specific style to ensure social icons use correct color --}}
+@push('styles')
+<style>
+    .social-icon {
+        fill: currentColor !important;
+        width: 24px;
+        height: 24px;
+    }
+</style>
+@endpush

@@ -1,4 +1,3 @@
-<!-- resources/views/layouts/app.blade.php -->
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -32,6 +31,12 @@
         }
         .transition-smooth {
             transition: all 0.3s ease;
+        }
+        /* ✅ Social icons – apply fill color from text color */
+        .social-icon {
+            fill: currentColor !important;
+            width: 24px;
+            height: 24px;
         }
     </style>
 

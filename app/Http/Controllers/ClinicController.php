@@ -301,4 +301,26 @@ class ClinicController extends Controller
 
         return view('clinic.statistics', compact('clinic', 'monthlyAppointments'));
     }
+    public function index()
+{
+    $clinics = Clinic::with('user')
+                ->where('verification_status', 'approved')
+                ->where('is_active', true)
+                ->paginate(12);
+
+    return view('clinics.index', compact('clinics'));
+}
+
+public function show($id)
+{
+    $clinic = Clinic::with(['user', 'doctors' => function($q) {
+        $q->where('verification_status', 'approved')->where('is_active', true);
+    }])->findOrFail($id);
+
+    if ($clinic->verification_status !== 'approved' || !$clinic->is_active) {
+        abort(404, 'Clinic not available.');
+    }
+
+    return view('clinics.show', compact('clinic'));
+}
 }

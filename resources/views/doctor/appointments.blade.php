@@ -32,6 +32,7 @@
                             </span>
                         </td>
                         <td class="py-2">
+                            {{-- Status Update Form --}}
                             <form method="POST" action="{{ route('doctor.appointment.action', $appointment->id) }}" class="inline">
                                 @csrf
                                 <select name="status" class="text-sm border rounded px-2 py-1">
@@ -42,6 +43,12 @@
                                 </select>
                                 <button type="submit" class="bg-cyan-600 text-white px-3 py-1 rounded text-sm">Update</button>
                             </form>
+
+                            {{-- नयाँ: Prescription लेख्ने बटन --}}
+                            <a href="{{ route('doctor.prescriptions.create', ['appointmentId' => $appointment->id]) }}" 
+                               class="ml-2 bg-emerald-600 text-white px-3 py-1 rounded text-sm hover:bg-emerald-700 transition">
+                                + Prescription
+                            </a>
                         </td>
                     </tr>
                     @endforeach

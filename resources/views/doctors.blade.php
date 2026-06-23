@@ -14,11 +14,12 @@
 
     <style>
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        .glass { backdrop-filter: blur(16px); background: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.2); }
         .hero-bg { background: radial-gradient(circle at top left, #67e8f9 0%, transparent 35%), radial-gradient(circle at bottom right, #93c5fd 0%, transparent 35%), #f8fafc; }
         .doctor-card:hover .doctor-image {
             transform: scale(1.05);
         }
+        /* ✅ Social icons – apply fill color from text color */
+        .social-icon { fill: currentColor; width: 24px; height: 24px; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -47,7 +48,7 @@
                             <div class="bg-gradient-to-r from-cyan-500 to-blue-600 h-32 flex items-center justify-center relative overflow-hidden">
                                 @if($doctor->profile_photo)
                                     <img src="{{ asset('storage/' . $doctor->profile_photo) }}" 
-                                         alt="{{ $doctor->name }}" 
+                                         alt="" 
                                          class="doctor-image w-full h-full object-cover transition-transform duration-300">
                                 @else
                                     <div class="bg-white rounded-full p-3 w-24 h-24 flex items-center justify-center shadow-lg">
@@ -57,7 +58,7 @@
                                 {{-- Verification Badge --}}
                                 @if($doctor->verification_status == 'approved')
                                     <span class="absolute top-3 right-3 bg-green-500 text-white text-xs px-2 py-1 rounded-full shadow">
-                                        ✅ Verified
+                                        ✅ {{ __('messages.verified') }}
                                     </span>
                                 @endif
                             </div>
@@ -83,23 +84,21 @@
                                     </p>
                                 </div>
 
+                                {{-- ✅ Buttons with proper flex and min-width --}}
                                 <div class="mt-6 flex gap-3">
-                                    {{-- ✅ Book Button – सही route with doctor ID --}}
                                     @auth
                                         <a href="{{ route('appointment.create', $doctor->id) }}" 
-                                           class="flex-1 bg-cyan-600 text-white text-center py-2 rounded-xl hover:bg-cyan-700 transition">
+                                           class="flex-1 min-w-0 bg-cyan-600 hover:bg-cyan-700 text-white text-center py-2.5 rounded-xl transition font-medium">
                                             {{ __('messages.doctor_book') }}
                                         </a>
                                     @else
                                         <a href="{{ route('login') }}" 
-                                           class="flex-1 bg-cyan-600 text-white text-center py-2 rounded-xl hover:bg-cyan-700 transition">
+                                           class="flex-1 min-w-0 bg-cyan-600 hover:bg-cyan-700 text-white text-center py-2.5 rounded-xl transition font-medium">
                                             {{ __('messages.doctor_book') }}
                                         </a>
                                     @endauth
-
-                                    {{-- Profile Button --}}
                                     <a href="{{ route('doctor.show', $doctor->id) }}" 
-                                       class="px-4 py-2 border border-slate-300 rounded-xl hover:bg-slate-50 transition text-slate-700">
+                                       class="flex-1 min-w-0 border border-slate-300 rounded-xl hover:bg-slate-50 transition text-slate-700 font-medium text-center py-2.5">
                                         {{ __('messages.doctor_profile') }}
                                     </a>
                                 </div>
@@ -128,7 +127,7 @@
         </div>
     </section>
 
-    <!-- Features Section -->
+    {{-- Features Section --}}
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold">{{ __('messages.doctors_features_heading') }}</h2>

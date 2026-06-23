@@ -9,6 +9,12 @@
     <style>
         body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
         .hero-bg { background: radial-gradient(circle at top left, #67e8f9 0%, transparent 35%), radial-gradient(circle at bottom right, #93c5fd 0%, transparent 35%), #f8fafc; }
+        /* ✅ Social icons – apply fill color from text color */
+        .social-icon {
+            fill: currentColor;
+            width: 24px;
+            height: 24px;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">

@@ -7,6 +7,9 @@ use App\Models\Doctor;
 use App\Models\Appointment;
 use App\Models\DoctorSchedule;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AppointmentBookedMail;
+use App\Models\Notification;
 
 class AppointmentController extends Controller
 {
@@ -74,6 +77,44 @@ class AppointmentController extends Controller
             'status' => Appointment::STATUS_PENDING,
         ]);
 
+        // --- ✅ NEW: Send Email Notifications ---
+        $locale = app()->getLocale();
+        
+        // Email to Patient
+        Mail::to($appointment->patient->email)->send(
+            new AppointmentBookedMail($appointment, $locale)
+        );
+        
+        // Email to Doctor
+        Mail::to($appointment->doctor->user->email)->send(
+            new AppointmentBookedMail($appointment, $locale)
+        );
+
+        // --- ✅ NEW: Create In-App Notifications ---
+        // Patient notification
+        $this->createNotification(
+            $appointment->patient_id,
+            'appointment_booked',
+            __('messages.notification_appointment_booked', [
+                'doctor' => $appointment->doctor->name,
+                'date' => $appointment->appointment_date,
+                'time' => $appointment->appointment_time,
+            ]),
+            route('patient.appointments')
+        );
+
+        // Doctor notification
+        $this->createNotification(
+            $appointment->doctor->user->id,
+            'appointment_request',
+            __('messages.notification_appointment_request', [
+                'patient' => $appointment->patient->name,
+                'date' => $appointment->appointment_date,
+                'time' => $appointment->appointment_time,
+            ]),
+            route('doctor.appointments')
+        );
+
         // Redirect to patient appointments list with success message
         return redirect()->route('patient.appointments')
             ->with('success', __('messages.appointment_booked'));
@@ -107,6 +148,18 @@ class AppointmentController extends Controller
 
         $appointment->status = Appointment::STATUS_CANCELLED;
         $appointment->save();
+
+        // --- ✅ NEW: Notification for cancellation (optional) ---
+        $this->createNotification(
+            $appointment->doctor->user->id,
+            'appointment_cancelled',
+            __('messages.notification_appointment_cancelled', [
+                'patient' => $appointment->patient->name,
+                'date' => $appointment->appointment_date,
+                'time' => $appointment->appointment_time,
+            ]),
+            route('doctor.appointments')
+        );
 
         return back()->with('success', __('messages.appointment_cancelled'));
     }
@@ -157,5 +210,28 @@ class AppointmentController extends Controller
         }
 
         return response()->json(['slots' => $slots]);
+    }
+
+    // =============================================
+    // ✅ NEW: Helper method to create notification
+    // =============================================
+    private function createNotification($userId, $type, $message, $link = null)
+    {
+        // Check if Notification model exists, otherwise skip
+        if (!class_exists(\App\Models\Notification::class)) {
+            return;
+        }
+
+        try {
+            Notification::create([
+                'user_id' => $userId,
+                'type' => $type,
+                'message' => $message,
+                'link' => $link,
+                'is_read' => false,
+            ]);
+        } catch (\Exception $e) {
+            // Silently fail if notification table doesn't exist yet
+        }
     }
 }
